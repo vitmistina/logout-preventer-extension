@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "15 minute logout prevent",
+  "version": "0.1.0",
+  "description": "Prevents automatic logout due to 15 minutes of inactivity in the web version of Outlook by automatically refreshing the page.",
+  "icons": {
+    "48": "icon.png",
+    "128": "icon_large.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": ["activeTab", "tabs"],
+  "host_permissions": ["https://*/*"],
+  "action": { "default_title": "Hey" },
+  //"host_permissions": ["https://*.seznam.cz/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.seznam.cz/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
