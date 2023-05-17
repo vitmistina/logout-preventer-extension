@@ -12,11 +12,10 @@
   },
   "permissions": ["activeTab", "tabs"],
   "host_permissions": ["https://*/*"],
-  "action": { "default_title": "Hey" },
-  //"host_permissions": ["https://*.seznam.cz/*"],
+  "action": {},
   "content_scripts": [
     {
-      "matches": ["https://*.seznam.cz/*"],
+      "matches": ["https://*.office.com/*"],
       "js": ["content.js"]
     }
   ]
