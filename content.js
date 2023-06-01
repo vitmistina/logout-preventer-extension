@@ -1,4 +1,4 @@
-const DEFAULT_TIME = 10;
+const DEFAULT_TIME = 365;
 let countdown = DEFAULT_TIME;
 
 const formatTime = (t) => {
@@ -32,6 +32,13 @@ const observeHref = function (mutationsList, observer) {
 };
 
 const simulateActivity = () => {
+  document.querySelector("div[role='tablist'] #\\33").click();
+  restartCountdown();
+  setTimeout(
+    () => document.querySelector("div[role='tablist'] #\\31").click(),
+    200
+  );
+
   // Get the current URL
   // const url = new URL(window.location.href);
 
@@ -57,12 +64,6 @@ const simulateActivity = () => {
   // Dispatch the event to the document
   // document.dispatchEvent(event);
   // document.querySelector("#O365_AppName").click();
-  document.querySelector("div[role='tablist'] #\\33").click();
-  restartCountdown();
-  setTimeout(
-    () => document.querySelector("div[role='tablist'] #\\31").click(),
-    200
-  );
   // setTimeout(() => window.location.reload(), 400);
 
   // calendarButton =
